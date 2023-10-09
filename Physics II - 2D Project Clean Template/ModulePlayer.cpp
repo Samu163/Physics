@@ -43,8 +43,17 @@ update_status ModulePlayer::Update()
 
 	app->renderer->Blit(graphic, x, y);
 	
-	x = integrator.ImplicitEuler(x, v_x, force_x / m, secondsCounter);
-	y = integrator.ImplicitEuler(y, v_y, force_y / m, secondsCounter);
+	//Implicit euler
+	/*x = integrator.ImplicitEuler(x, v_x, force_x / m, secondsCounter);
+	y = integrator.ImplicitEuler(y, v_y, force_y / m, secondsCounter);*/
+	
+	/*
+	x = integrator.VelocityVerlet(x, v_x, force_x / m, secondsCounter);
+	y = integrator.VelocityVerlet(y, v_y, force_y / m, secondsCounter);	
+	*/
+
+	x = integrator.VelocityVerlet(x, v_x, force_x / m, secondsCounter);
+	y = integrator.VelocityVerlet(y, v_y, force_y / m, secondsCounter);
 	secondsCounter += (float)1 / 60;
 
 	

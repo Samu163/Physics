@@ -14,8 +14,9 @@ public:
 	}
 	float  VelocityVerlet(float x, float v, float a, float t)
 	{
-		x += v * t + 1 / (2 * a * t * t);
 		v += a * t;
+		x += v * t + ( a * t * t)/2;
+		
 		return x;
 	}
 	float StormetVerlet(float x, float v, float a, float t)
