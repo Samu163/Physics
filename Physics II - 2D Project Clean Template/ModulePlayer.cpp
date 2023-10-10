@@ -47,13 +47,13 @@ update_status ModulePlayer::Update()
 	/*x = integrator.ImplicitEuler(x, v_x, force_x / m, secondsCounter);
 	y = integrator.ImplicitEuler(y, v_y, force_y / m, secondsCounter);*/
 	
-	/*
-	x = integrator.VelocityVerlet(x, v_x, force_x / m, secondsCounter);
-	y = integrator.VelocityVerlet(y, v_y, force_y / m, secondsCounter);	
-	*/
+	
+    //x = integrator.VelocityVerlet(x, v_x, force_x / m, secondsCounter);
+	//y = integrator.VelocityVerlet(y, v_y, force_y / m, secondsCounter);
+	
 
-	x = integrator.VelocityVerlet(x, v_x, force_x / m, secondsCounter);
-	y = integrator.VelocityVerlet(y, v_y, force_y / m, secondsCounter);
+	/*x = integrator.StormetVerlet(x, v_x, force_x / m, secondsCounter);
+	y = integrator.StormetVerlet(y, v_y, force_y / m, secondsCounter);*/
 	secondsCounter += (float)1 / 60;
 
 	
